@@ -111,7 +111,7 @@ let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
-
+" html 自动补全 默认展开键<c-y>+逗号
 Bundle 'mattn/emmet-vim'
 
 call vundle#end()
