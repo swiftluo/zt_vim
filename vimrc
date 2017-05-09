@@ -50,6 +50,18 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 
 """"""""""""""""""""""""""""""""""""""""""
+"          文件树git状态提示             "
+""""""""""""""""""""""""""""""""""""""""""
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+let g:ale_sign_column_always = 1
+let g:ale_set_highlights = 0
+"自定义error和warning图标
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '►'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+
+""""""""""""""""""""""""""""""""""""""""""
 "            airline主题                 "
 """"""""""""""""""""""""""""""""""""""""""
 Bundle 'altercation/vim-colors-solarized'
@@ -72,7 +84,10 @@ let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cp
 """"""""""""""""""""""""""""""""""""""""""
 "            自定义代码块补全            "
 """"""""""""""""""""""""""""""""""""""""""
+Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+" 兼容YCM 和 utilsnips
+Bundle 'ervandew/supertab'
 let g:UltiSnipsSnippetsDir        = $HOME.'/.vim/UltiSnips/'
 let g:UltiSnipsSnippetDirectories=['UltiSnips']
 let g:UltiSnipsExpandTrigger='<c-j>'
@@ -88,6 +103,7 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 1
 "               快捷注释                 "
 """"""""""""""""""""""""""""""""""""""""""
 Bundle 'scrooloose/nerdcommenter'
+" \cc 注释  \cu取消注释
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
 let g:NERDDefaultAlign = 'left'
@@ -97,25 +113,24 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 
 
+""""""""""""""""""""""""""""""""""""""""""
+"            异步语法检查                "
+""""""""""""""""""""""""""""""""""""""""""
+Plugin 'w0rp/ale'
+" python 语法检查规则
+Plugin 'nvie/vim-flake8'
+
+
 " html 自动补全 默认展开键<c-y>+逗号
 Bundle 'mattn/emmet-vim'
-Plugin 'nvie/vim-flake8'
-Plugin 'w0rp/ale'
 
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-let g:ale_sign_column_always = 1
-let g:ale_set_highlights = 0
-"自定义error和warning图标
-let g:ale_sign_error = '✗'
-let g:ale_sign_warning = '►'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-
+" vim命令模式集成git命令
 Plugin 'tpope/vim-fugitive'
-Plugin 'SirVer/ultisnips'
-Bundle 'ervandew/supertab'
+
+
 call vundle#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                 vudlle----结束                             "
+"                            vudlle----结束                                  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
