@@ -85,6 +85,7 @@ let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cp
 "            自定义代码块补全            "
 """"""""""""""""""""""""""""""""""""""""""
 Plugin 'SirVer/ultisnips'
+" 代码块集合
 Plugin 'honza/vim-snippets'
 " 兼容YCM 和 utilsnips
 Bundle 'ervandew/supertab'
