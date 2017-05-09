@@ -111,9 +111,14 @@ let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
+
+Bundle 'mattn/emmet-vim'
+
 call vundle#end()
 
 filetype plugin indent on
 
 let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 nnoremap <F10> :exe 'NERDTreeToggle'<CR>
+
+" i am  swift!!!
