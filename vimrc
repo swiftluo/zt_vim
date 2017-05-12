@@ -44,7 +44,7 @@ Plugin 'VundleVim/Vundle.vim'
 "               文件树                   "
 """"""""""""""""""""""""""""""""""""""""""
 Plugin 'scrooloose/nerdtree'
-nnoremap <F10> :exe 'NERDTreeToggle'<CR>
+nnoremap tt :exe 'NERDTreeToggle'<CR>
 let g:NERDTreeIgnore=['\.pyc','\~$','\.swp']
 ""当NERDTree为剩下的唯一窗口时自动关闭
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -131,11 +131,22 @@ Bundle 'mattn/emmet-vim'
 " vim命令模式集成git命令
 Plugin 'tpope/vim-fugitive'
 
+" 括号引号自动补全
 " Bundle 'Raimondi/delimitMate'
+
+" markdown语法高亮
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
+" markdown实时预览
+Plugin 'suan/vim-instant-markdown'
+
 call vundle#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                            vudlle----结束                                  "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
+" <f5> 运行python程序
+map <f5> :w<cr>:!python %<cr>
 
