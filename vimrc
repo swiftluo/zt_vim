@@ -128,18 +128,53 @@ Plugin 'nvie/vim-flake8'
 " html 自动补全 默认展开键<c-y>+逗号
 Bundle 'mattn/emmet-vim'
 
+
 " vim命令模式集成git命令
 Plugin 'tpope/vim-fugitive'
 
+
 " 括号引号自动补全
-" Bundle 'Raimondi/delimitMate'
+Bundle 'Raimondi/delimitMate'
+" for python docstring ", 特别有用
+au FileType python let b:delimitMate_nesting_quotes = ['"']
+" 关闭某些类型文件的自动补全
+"au FileType mail let b:delimitMate_autoclose = 0
+
 
 " markdown语法高亮
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
+
 " markdown实时预览
 Plugin 'suan/vim-instant-markdown'
+
+
+" 文件搜索
+Bundle 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_map = '<leader>p'
+let g:ctrlp_cmd = 'CtrlP'
+map <leader>f :CtrlPMRU<CR>
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
+    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
+    \ }
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_match_window_bottom=1
+let g:ctrlp_max_height=15
+let g:ctrlp_match_window_reversed=0
+let g:ctrlp_mruf_max=500
+let g:ctrlp_follow_symlinks=1
+
+
+" 函数搜索
+Bundle 'tacahiroy/ctrlp-funky'
+nnoremap <Leader>fu :CtrlPFunky<Cr>
+" narrow the list down with a word under cursor
+nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+let g:ctrlp_funky_syntax_highlight = 1
+let g:ctrlp_extensions = ['funky']
+
 
 call vundle#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
